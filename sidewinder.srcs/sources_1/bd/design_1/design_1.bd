@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x38F3C6021EC2E85D",
+      "boundary_crc": "0x7C7AD13262818D4E",
       "device": "xczu19eg-ffvc1760-2-i",
       "gen_directory": "../../../../sidewinder.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.1"
+      "tool_version": "2021.1",
+      "validated": "true"
     },
     "design_tree": {
       "ddr4_ram": "",
@@ -46,13 +47,75 @@
       "ddr4": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:ddr4:1.0",
-        "vlnv": "xilinx.com:interface:ddr4_rtl:1.0"
+        "vlnv": "xilinx.com:interface:ddr4_rtl:1.0",
+        "parameters": {
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "RD_PRI_REG",
+            "value_src": "user_prop"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "user_prop"
+          },
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "17",
+            "value_src": "user_prop"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "16",
+            "value_src": "user_prop"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "user_prop"
+          },
+          "CUSTOM_PARTS": {
+            "value": "../../../../../../ddr4/custom_parts_KSM24SED8.csv",
+            "value_src": "user_prop"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "NO_DM_NO_DBI",
+            "value_src": "user_prop"
+          },
+          "DATA_WIDTH": {
+            "value": "72",
+            "value_src": "user_prop"
+          },
+          "MEMORY_PART": {
+            "value": "DDR4_CUSTOM",
+            "value_src": "user_prop"
+          },
+          "MEMORY_TYPE": {
+            "value": "SODIMMs",
+            "value_src": "user_prop"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "user_prop"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "user_prop"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "938",
+            "value_src": "user_prop"
+          }
+        }
       },
       "ddr4_refclk": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
         "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
         "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "333000000"
           }
@@ -61,14 +124,34 @@
       "clk_100mhz": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
-        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0"
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          }
+        }
       },
       "dma_refclk": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
-        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0"
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          }
+        }
       },
-      "pcie_exp": {
+      "pcie_mgt": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:pcie_7x_mgt:1.0",
         "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
@@ -77,7 +160,17 @@
     "ports": {
       "pb_rst_n": {
         "type": "rst",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "pb_go": {
         "direction": "I"
@@ -1904,7 +1997,7 @@
       },
       "xdma_bridge_pcie_mgt": {
         "interface_ports": [
-          "pcie_exp",
+          "pcie_mgt",
           "xdma_bridge/pcie_mgt"
         ]
       }

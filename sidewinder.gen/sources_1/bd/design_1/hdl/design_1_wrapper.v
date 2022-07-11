@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
-//Date        : Sat Jul  9 17:34:12 2022
+//Date        : Mon Jul 11 14:29:26 2022
 //Host        : simtool5-2 running 64-bit Ubuntu 20.04.4 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -34,10 +34,10 @@ module design_1_wrapper
     led_heartbeat,
     pb_go,
     pb_rst_n,
-    pcie_exp_rxn,
-    pcie_exp_rxp,
-    pcie_exp_txn,
-    pcie_exp_txp);
+    pcie_mgt_rxn,
+    pcie_mgt_rxp,
+    pcie_mgt_txn,
+    pcie_mgt_txp);
   input [0:0]clk_100mhz_clk_n;
   input [0:0]clk_100mhz_clk_p;
   output ddr4_act_n;
@@ -62,10 +62,10 @@ module design_1_wrapper
   output led_heartbeat;
   input pb_go;
   input pb_rst_n;
-  input [15:0]pcie_exp_rxn;
-  input [15:0]pcie_exp_rxp;
-  output [15:0]pcie_exp_txn;
-  output [15:0]pcie_exp_txp;
+  input [15:0]pcie_mgt_rxn;
+  input [15:0]pcie_mgt_rxp;
+  output [15:0]pcie_mgt_txn;
+  output [15:0]pcie_mgt_txp;
 
   wire [0:0]clk_100mhz_clk_n;
   wire [0:0]clk_100mhz_clk_p;
@@ -91,10 +91,10 @@ module design_1_wrapper
   wire led_heartbeat;
   wire pb_go;
   wire pb_rst_n;
-  wire [15:0]pcie_exp_rxn;
-  wire [15:0]pcie_exp_rxp;
-  wire [15:0]pcie_exp_txn;
-  wire [15:0]pcie_exp_txp;
+  wire [15:0]pcie_mgt_rxn;
+  wire [15:0]pcie_mgt_rxp;
+  wire [15:0]pcie_mgt_txn;
+  wire [15:0]pcie_mgt_txp;
 
   design_1 design_1_i
        (.clk_100mhz_clk_n(clk_100mhz_clk_n),
@@ -121,8 +121,8 @@ module design_1_wrapper
         .led_heartbeat(led_heartbeat),
         .pb_go(pb_go),
         .pb_rst_n(pb_rst_n),
-        .pcie_exp_rxn(pcie_exp_rxn),
-        .pcie_exp_rxp(pcie_exp_rxp),
-        .pcie_exp_txn(pcie_exp_txn),
-        .pcie_exp_txp(pcie_exp_txp));
+        .pcie_mgt_rxn(pcie_mgt_rxn),
+        .pcie_mgt_rxp(pcie_mgt_rxp),
+        .pcie_mgt_txn(pcie_mgt_txn),
+        .pcie_mgt_txp(pcie_mgt_txp));
 endmodule
