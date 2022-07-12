@@ -24,7 +24,7 @@ module controller#
 )
 (
     input BUTTON,
-    output HEARTBEAT, ALARM,
+    output ALARM,
 
 
     //=================== From here down is the AXI4 interface =================
@@ -368,24 +368,6 @@ module controller#
  
         endcase
     
-    end
-
-
-
-
-    reg heartbeat = 0;
-    reg[31:0] blink_counter = 0;
-    assign HEARTBEAT = heartbeat;
-
-    always @(posedge clk) begin
-        if (resetn == 0)
-            blink_counter <= 0;
-        else if (blink_counter)
-            blink_counter <= blink_counter - 1;
-        else begin
-            heartbeat     <= ~heartbeat;
-            blink_counter <= 20000000;
-        end
     end
 
 
