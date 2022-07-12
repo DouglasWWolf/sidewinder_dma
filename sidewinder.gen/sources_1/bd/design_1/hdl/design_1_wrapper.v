@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
-//Date        : Mon Jul 11 14:29:26 2022
+//Date        : Mon Jul 11 18:08:47 2022
 //Host        : simtool5-2 running 64-bit Ubuntu 20.04.4 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -31,6 +31,8 @@ module design_1_wrapper
     dma_refclk_clk_n,
     dma_refclk_clk_p,
     led_alarm,
+    led_ddr_cal_done,
+    led_dma_link_up,
     led_heartbeat,
     pb_go,
     pb_rst_n,
@@ -59,6 +61,8 @@ module design_1_wrapper
   input [0:0]dma_refclk_clk_n;
   input [0:0]dma_refclk_clk_p;
   output led_alarm;
+  output led_ddr_cal_done;
+  output led_dma_link_up;
   output led_heartbeat;
   input pb_go;
   input pb_rst_n;
@@ -88,6 +92,8 @@ module design_1_wrapper
   wire [0:0]dma_refclk_clk_n;
   wire [0:0]dma_refclk_clk_p;
   wire led_alarm;
+  wire led_ddr_cal_done;
+  wire led_dma_link_up;
   wire led_heartbeat;
   wire pb_go;
   wire pb_rst_n;
@@ -118,6 +124,8 @@ module design_1_wrapper
         .dma_refclk_clk_n(dma_refclk_clk_n),
         .dma_refclk_clk_p(dma_refclk_clk_p),
         .led_alarm(led_alarm),
+        .led_ddr_cal_done(led_ddr_cal_done),
+        .led_dma_link_up(led_dma_link_up),
         .led_heartbeat(led_heartbeat),
         .pb_go(pb_go),
         .pb_rst_n(pb_rst_n),

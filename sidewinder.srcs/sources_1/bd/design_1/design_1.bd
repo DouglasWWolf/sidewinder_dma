@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7C7AD13262818D4E",
+      "boundary_crc": "0x5FAD03826F1FE1D5",
       "device": "xczu19eg-ffvc1760-2-i",
       "gen_directory": "../../../../sidewinder.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -179,6 +179,12 @@
         "direction": "O"
       },
       "led_alarm": {
+        "direction": "O"
+      },
+      "led_ddr_cal_done": {
+        "direction": "O"
+      },
+      "led_dma_link_up": {
         "direction": "O"
       }
     },
@@ -2047,6 +2053,12 @@
           "ddr4_reset/ext_reset_in"
         ]
       },
+      "ddr4_ram_c0_init_calib_complete": {
+        "ports": [
+          "ddr4_ram/c0_init_calib_complete",
+          "led_ddr_cal_done"
+        ]
+      },
       "ddr4_reset_peripheral_aresetn": {
         "ports": [
           "ddr4_reset/peripheral_aresetn",
@@ -2116,6 +2128,12 @@
           "ddr4_axi_interconnect/S00_ARESETN",
           "system_interconnect/M01_ARESETN",
           "system_interconnect/S00_ARESETN"
+        ]
+      },
+      "xdma_bridge_user_lnk_up": {
+        "ports": [
+          "xdma_bridge/user_lnk_up",
+          "led_dma_link_up"
         ]
       },
       "xdma_clock_IBUF_DS_ODIV2": {

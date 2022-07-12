@@ -1,21 +1,20 @@
 
-# ---------------------------------------------------------------------------//
+# ---------------------------------------------------------------------------
 # Pin definitions
-# ---------------------------------------------------------------------------//
+# ---------------------------------------------------------------------------
 
 
 #######################################
 #  Clocks & system signals
 #######################################
 
-set_property PACKAGE_PIN  C4   [ get_ports clk_100mhz_clk_p ]
-set_property PACKAGE_PIN  C3   [ get_ports clk_100mhz_clk_n ]
+set_property -dict {PACKAGE_PIN C4  IOSTANDARD LVDS_25} [ get_ports clk_100mhz_clk_p ]
+set_property -dict {PACKAGE_PIN C3  IOSTANDARD LVDS_25} [ get_ports clk_100mhz_clk_n ]
 
-set_property PACKAGE_PIN  AH11 [ get_ports dma_refclk_clk_n ]
-set_property PACKAGE_PIN  AH12 [ get_ports dma_refclk_clk_p ]
+set_property PACKAGE_PIN  AH12 [ get_ports dma_refclk_clk_p ] ;# PCIE endpoint refclk#2
+set_property PACKAGE_PIN  AH11 [ get_ports dma_refclk_clk_n ]  
 
-
-create_clock -period 10.000 -name sysclk100 [get_ports clk_100mhz_clk_p]
+create_clock -period 10.000 -name sysclk100   [get_ports clk_100mhz_clk_p]
 create_clock -period 10.000 -name pcie_sysclk [get_ports dma_refclk_clk_p]
 set_clock_groups -name sys_clk_100 -asynchronous -group [get_clocks sysclk100]
 
@@ -24,8 +23,10 @@ set_clock_groups -name sys_clk_100 -asynchronous -group [get_clocks sysclk100]
 #######################################
 #  Miscellaneous
 #######################################
-set_property  -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS33} [get_ports { led_heartbeat }] ;# LED0
-set_property  -dict {PACKAGE_PIN A5 IOSTANDARD LVCMOS33} [get_ports { led_alarm     }] ;# LED1
+set_property  -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS33} [get_ports { led_heartbeat    }] ;# USER_LED0
+set_property  -dict {PACKAGE_PIN A5 IOSTANDARD LVCMOS33} [get_ports { led_ddr_cal_done }] ;# USER_LED1
+set_property  -dict {PACKAGE_PIN A4 IOSTANDARD LVCMOS33} [get_ports { led_dma_link_up  }] ;# USER_LED2
+set_property  -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS33} [get_ports { led_alarm        }] ;# USER_LED3
 
 set_property  -dict {PACKAGE_PIN B6 IOSTANDARD LVCMOS33} [get_ports pb_rst_n]  ;# PB_SW0
 set_property  -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports pb_go   ]  ;# PB_SW1
@@ -43,79 +44,6 @@ set_property  -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports pb_go   ]  ;
 #set_property  PACKAGE_PIN  D4    [get_ports {  led[8]                    }]
 #set_property  PACKAGE_PIN  D1    [get_ports {  led[9]                    }]
 
-
-#######################################
-# PCIe End-Point pins
-#######################################
-
-#set_property  PACKAGE_PIN  AD7 [get_ports 			{pcie_exp_rxn[0]   }]
-#set_property  PACKAGE_PIN  AE5	[get_ports			{pcie_exp_rxn[1]   }]
-#set_property  PACKAGE_PIN  AF7	[get_ports			{pcie_exp_rxn[2]   }]
-#set_property  PACKAGE_PIN  AG5	[get_ports			{pcie_exp_rxn[3]   }]
-#set_property  PACKAGE_PIN  AH7	[get_ports			{pcie_exp_rxn[4]   }]
-#set_property  PACKAGE_PIN  AJ5	[get_ports			{pcie_exp_rxn[5]   }]
-#set_property  PACKAGE_PIN  AK7	[get_ports			{pcie_exp_rxn[6]   }]
-#set_property  PACKAGE_PIN  AL5	[get_ports			{pcie_exp_rxn[7]   }]
-#set_property  PACKAGE_PIN  AM7	[get_ports			{pcie_exp_rxn[8]   }]
-#set_property  PACKAGE_PIN  AN5	[get_ports			{pcie_exp_rxn[9]   }]
-#set_property  PACKAGE_PIN  AP7	[get_ports			{pcie_exp_rxn[10]  }]
-#set_property  PACKAGE_PIN  AR5	[get_ports			{pcie_exp_rxn[11]  }]
-#set_property  PACKAGE_PIN  AT7	[get_ports			{pcie_exp_rxn[12]  }]
-#set_property  PACKAGE_PIN  AU5	[get_ports			{pcie_exp_rxn[13]  }]
-#set_property  PACKAGE_PIN  AW5	[get_ports			{pcie_exp_rxn[14]  }]
-#set_property  PACKAGE_PIN  AY3	[get_ports			{pcie_exp_rxn[15]  }]
-
-
-#set_property  PACKAGE_PIN  AD8  [get_ports 		{pcie_exp_rxp[0]   }]
-#set_property  PACKAGE_PIN  AE6  [get_ports			{pcie_exp_rxp[1]   }]
-#set_property  PACKAGE_PIN  AF8  [get_ports			{pcie_exp_rxp[2]   }]
-#set_property  PACKAGE_PIN  AG6  [get_ports			{pcie_exp_rxp[3]   }]
-#set_property  PACKAGE_PIN  AH8  [get_ports			{pcie_exp_rxp[4]   }]
-#set_property  PACKAGE_PIN  AJ6  [get_ports			{pcie_exp_rxp[5]   }]
-#set_property  PACKAGE_PIN  AK8  [get_ports			{pcie_exp_rxp[6]   }]
-#set_property  PACKAGE_PIN  AL6  [get_ports			{pcie_exp_rxp[7]   }]
-#set_property  PACKAGE_PIN  AM8  [get_ports			{pcie_exp_rxp[8]   }]
-#set_property  PACKAGE_PIN  AN6  [get_ports			{pcie_exp_rxp[9]   }]
-#set_property  PACKAGE_PIN  AP8  [get_ports			{pcie_exp_rxp[10]  }]
-#set_property  PACKAGE_PIN  AR6  [get_ports			{pcie_exp_rxp[11]  }]
-#set_property  PACKAGE_PIN  AT8  [get_ports			{pcie_exp_rxp[12]  }]
-#set_property  PACKAGE_PIN  AU6  [get_ports			{pcie_exp_rxp[13]  }]
-#set_property  PACKAGE_PIN  AW6  [get_ports			{pcie_exp_rxp[14]  }]
-#set_property  PACKAGE_PIN  AY4  [get_ports			{pcie_exp_rxp[15]  }]
-
-#set_property  PACKAGE_PIN  AE2	[get_ports 			{pcie_exp_txp[0]   }]
-#set_property  PACKAGE_PIN  AF4	[get_ports			{pcie_exp_txp[1]   }]
-#set_property  PACKAGE_PIN  AG2	[get_ports			{pcie_exp_txp[2]   }]
-#set_property  PACKAGE_PIN  AH4	[get_ports			{pcie_exp_txp[3]   }]
-#set_property  PACKAGE_PIN  AJ2	[get_ports			{pcie_exp_txp[4]   }]
-#set_property  PACKAGE_PIN  AK4	[get_ports			{pcie_exp_txp[5]   }]
-#set_property  PACKAGE_PIN  AL2	[get_ports			{pcie_exp_txp[6]   }]
-#set_property  PACKAGE_PIN  AM4	[get_ports			{pcie_exp_txp[7]   }]
-#set_property  PACKAGE_PIN  AN2	[get_ports			{pcie_exp_txp[8]   }]
-#set_property  PACKAGE_PIN  AP4	[get_ports			{pcie_exp_txp[9]   }]
-#set_property  PACKAGE_PIN  AR2	[get_ports			{pcie_exp_txp[10]  }]
-#set_property  PACKAGE_PIN  AT4	[get_ports			{pcie_exp_txp[11]  }]
-#set_property  PACKAGE_PIN  AU2	[get_ports			{pcie_exp_txp[12]  }]
-#set_property  PACKAGE_PIN  AV4	[get_ports			{pcie_exp_txp[13]  }]
-#set_property  PACKAGE_PIN  AW2	[get_ports			{pcie_exp_txp[14]  }]
-#set_property  PACKAGE_PIN  BA2	[get_ports			{pcie_exp_txp[15]  }]
-
-#set_property  PACKAGE_PIN  AE1	[get_ports 			{pcie_exp_txn[0]   }]
-#set_property  PACKAGE_PIN  AF3	[get_ports			{pcie_exp_txn[1]   }]
-#set_property  PACKAGE_PIN  AG1	[get_ports			{pcie_exp_txn[2]   }]
-#set_property  PACKAGE_PIN  AH3	[get_ports			{pcie_exp_txn[3]   }]
-#set_property  PACKAGE_PIN  AJ1	[get_ports			{pcie_exp_txn[4]   }]
-#set_property  PACKAGE_PIN  AK3	[get_ports			{pcie_exp_txn[5]   }]
-#set_property  PACKAGE_PIN  AL1	[get_ports			{pcie_exp_txn[6]   }]
-#set_property  PACKAGE_PIN  AM3	[get_ports			{pcie_exp_txn[7]   }]
-#set_property  PACKAGE_PIN  AN1	[get_ports			{pcie_exp_txn[8]   }]
-#set_property  PACKAGE_PIN  AP3	[get_ports			{pcie_exp_txn[9]   }]
-#set_property  PACKAGE_PIN  AR1	[get_ports			{pcie_exp_txn[10]  }]
-#set_property  PACKAGE_PIN  AT3	[get_ports			{pcie_exp_txn[11]  }]
-#set_property  PACKAGE_PIN  AU1	[get_ports			{pcie_exp_txn[12]  }]
-#set_property  PACKAGE_PIN  AV3	[get_ports			{pcie_exp_txn[13]  }]
-#set_property  PACKAGE_PIN  AW1	[get_ports			{pcie_exp_txn[14]  }]
-#set_property  PACKAGE_PIN  BA1	[get_ports			{pcie_exp_txn[15]  }]
 
 #######################################
 #  PL DDR4, address & control
@@ -270,9 +198,91 @@ set_property PACKAGE_PIN AY12 [get_ports { ddr4_dm_n[7] }]
 set_property PACKAGE_PIN BA23 [get_ports { ddr4_dm_n[8] }]
 
 
-#######################################
-# I/O standard definitions
-#######################################
-set_property IOSTANDARD LVDS_25  [get_ports clk_100mhz*]
+
+#############################################################################################################
+# PCIe End-Point pins
+#############################################################################################################
+#
+# Note: These are the correct pins for the PCIe rx/tx lines, but you <must> leave these lines commented out.
+#
+# On an Ultrascale+ part (such as the xczu19eg FPGA that the Sidewinder uses), the PCIe interface exists in 
+# a dedicated hard-block in the silicon, and the MGT (multi-gigabit tranceiver) pins are dedicated as well.
+# The location of the MGT pins are predetermined by which PCIe block location you configure in the "DMA/Bridge
+# Subsystem for PCIe" IP.  (It's under the "Basic" tab). This project uses the PCIe tranceiver in block X1Y0.
+#
+# Vivado will issue critical warnings for each of the 64 MGT pins if you try to define their locations, so,
+# LEAVE THESE PINS COMMENTED OUT IN THIS FILE
+#############################################################################################################
+
+# set_property PACKAGE_PIN AD7 [get_ports {pcie_mgt_rxn[0] }]
+# set_property PACKAGE_PIN AE5 [get_ports {pcie_mgt_rxn[1] }]
+# set_property PACKAGE_PIN AF7 [get_ports {pcie_mgt_rxn[2] }]
+# set_property PACKAGE_PIN AG5 [get_ports {pcie_mgt_rxn[3] }]
+# set_property PACKAGE_PIN AH7 [get_ports {pcie_mgt_rxn[4] }]
+# set_property PACKAGE_PIN AJ5 [get_ports {pcie_mgt_rxn[5] }]
+# set_property PACKAGE_PIN AK7 [get_ports {pcie_mgt_rxn[6] }]
+# set_property PACKAGE_PIN AL5 [get_ports {pcie_mgt_rxn[7] }]
+# set_property PACKAGE_PIN AM7 [get_ports {pcie_mgt_rxn[8] }]
+# set_property PACKAGE_PIN AN5 [get_ports {pcie_mgt_rxn[9] }]
+# set_property PACKAGE_PIN AP7 [get_ports {pcie_mgt_rxn[10]}]
+# set_property PACKAGE_PIN AR5 [get_ports {pcie_mgt_rxn[11]}]
+# set_property PACKAGE_PIN AT7 [get_ports {pcie_mgt_rxn[12]}]
+# set_property PACKAGE_PIN AU5 [get_ports {pcie_mgt_rxn[13]}]
+# set_property PACKAGE_PIN AW5 [get_ports {pcie_mgt_rxn[14]}]
+# set_property PACKAGE_PIN AY3 [get_ports {pcie_mgt_rxn[15]}]
 
 
+# set_property PACKAGE_PIN AD8 [get_ports {pcie_mgt_rxp[0] }]
+# set_property PACKAGE_PIN AE6 [get_ports {pcie_mgt_rxp[1] }]
+# set_property PACKAGE_PIN AF8 [get_ports {pcie_mgt_rxp[2] }]
+# set_property PACKAGE_PIN AG6 [get_ports {pcie_mgt_rxp[3] }]
+# set_property PACKAGE_PIN AH8 [get_ports {pcie_mgt_rxp[4] }]
+# set_property PACKAGE_PIN AJ6 [get_ports {pcie_mgt_rxp[5] }]
+# set_property PACKAGE_PIN AK8 [get_ports {pcie_mgt_rxp[6] }]
+# set_property PACKAGE_PIN AL6 [get_ports {pcie_mgt_rxp[7] }]
+# set_property PACKAGE_PIN AM8 [get_ports {pcie_mgt_rxp[8] }]
+# set_property PACKAGE_PIN AN6 [get_ports {pcie_mgt_rxp[9] }]
+# set_property PACKAGE_PIN AP8 [get_ports {pcie_mgt_rxp[10]}]
+# set_property PACKAGE_PIN AR6 [get_ports {pcie_mgt_rxp[11]}]
+# set_property PACKAGE_PIN AT8 [get_ports {pcie_mgt_rxp[12]}]
+# set_property PACKAGE_PIN AU6 [get_ports {pcie_mgt_rxp[13]}]
+# set_property PACKAGE_PIN AW6 [get_ports {pcie_mgt_rxp[14]}]
+# set_property PACKAGE_PIN AY4 [get_ports {pcie_mgt_rxp[15]}]
+
+# set_property PACKAGE_PIN AE2 [get_ports {pcie_mgt_txp[0] }]
+# set_property PACKAGE_PIN AF4 [get_ports {pcie_mgt_txp[1] }]
+# set_property PACKAGE_PIN AG2 [get_ports {pcie_mgt_txp[2] }]
+# set_property PACKAGE_PIN AH4 [get_ports {pcie_mgt_txp[3] }]
+# set_property PACKAGE_PIN AJ2 [get_ports {pcie_mgt_txp[4] }]
+# set_property PACKAGE_PIN AK4 [get_ports {pcie_mgt_txp[5] }]
+# set_property PACKAGE_PIN AL2 [get_ports {pcie_mgt_txp[6] }]
+# set_property PACKAGE_PIN AM4 [get_ports {pcie_mgt_txp[7] }]
+# set_property PACKAGE_PIN AN2 [get_ports {pcie_mgt_txp[8] }]
+# set_property PACKAGE_PIN AP4 [get_ports {pcie_mgt_txp[9] }]
+# set_property PACKAGE_PIN AR2 [get_ports {pcie_mgt_txp[10]}]
+# set_property PACKAGE_PIN AT4 [get_ports {pcie_mgt_txp[11]}]
+# set_property PACKAGE_PIN AU2 [get_ports {pcie_mgt_txp[12]}]
+# set_property PACKAGE_PIN AV4 [get_ports {pcie_mgt_txp[13]}]
+# set_property PACKAGE_PIN AW2 [get_ports {pcie_mgt_txp[14]}]
+# set_property PACKAGE_PIN BA2 [get_ports {pcie_mgt_txp[15]}]
+
+# set_property PACKAGE_PIN AE1 [get_ports {pcie_mgt_txn[0] }]
+# set_property PACKAGE_PIN AF3 [get_ports {pcie_mgt_txn[1] }]
+# set_property PACKAGE_PIN AG1 [get_ports {pcie_mgt_txn[2] }]
+# set_property PACKAGE_PIN AH3 [get_ports {pcie_mgt_txn[3] }]
+# set_property PACKAGE_PIN AJ1 [get_ports {pcie_mgt_txn[4] }]
+# set_property PACKAGE_PIN AK3 [get_ports {pcie_mgt_txn[5] }]
+# set_property PACKAGE_PIN AL1 [get_ports {pcie_mgt_txn[6] }]
+# set_property PACKAGE_PIN AM3 [get_ports {pcie_mgt_txn[7] }]
+# set_property PACKAGE_PIN AN1 [get_ports {pcie_mgt_txn[8] }]
+# set_property PACKAGE_PIN AP3 [get_ports {pcie_mgt_txn[9] }]
+# set_property PACKAGE_PIN AR1 [get_ports {pcie_mgt_txn[10]}]
+# set_property PACKAGE_PIN AT3 [get_ports {pcie_mgt_txn[11]}]
+# set_property PACKAGE_PIN AU1 [get_ports {pcie_mgt_txn[12]}]
+# set_property PACKAGE_PIN AV3 [get_ports {pcie_mgt_txn[13]}]
+# set_property PACKAGE_PIN AW1 [get_ports {pcie_mgt_txn[14]}]
+# set_property PACKAGE_PIN BA1 [get_ports {pcie_mgt_txn[15]}]
+
+#############################################################################################################
+# End of PCIe End-Point pins
+#############################################################################################################
