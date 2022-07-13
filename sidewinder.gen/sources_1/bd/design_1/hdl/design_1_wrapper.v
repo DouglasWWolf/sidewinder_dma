@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
-//Date        : Wed Jul 13 12:23:30 2022
+//Date        : Wed Jul 13 14:14:59 2022
 //Host        : simtool5-2 running 64-bit Ubuntu 20.04.4 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -35,6 +35,7 @@ module design_1_wrapper
     led_dma_link_up,
     led_heartbeat,
     pb_go,
+    pb_read,
     pb_rst_n,
     pcie_mgt_rxn,
     pcie_mgt_rxp,
@@ -65,6 +66,7 @@ module design_1_wrapper
   output led_dma_link_up;
   output led_heartbeat;
   input pb_go;
+  input pb_read;
   input pb_rst_n;
   input [15:0]pcie_mgt_rxn;
   input [15:0]pcie_mgt_rxp;
@@ -96,6 +98,7 @@ module design_1_wrapper
   wire led_dma_link_up;
   wire led_heartbeat;
   wire pb_go;
+  wire pb_read;
   wire pb_rst_n;
   wire [15:0]pcie_mgt_rxn;
   wire [15:0]pcie_mgt_rxp;
@@ -128,6 +131,7 @@ module design_1_wrapper
         .led_dma_link_up(led_dma_link_up),
         .led_heartbeat(led_heartbeat),
         .pb_go(pb_go),
+        .pb_read(pb_read),
         .pb_rst_n(pb_rst_n),
         .pcie_mgt_rxn(pcie_mgt_rxn),
         .pcie_mgt_rxp(pcie_mgt_rxp),
