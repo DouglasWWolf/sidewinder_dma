@@ -1345,6 +1345,9 @@
           "C_PROBE1_TYPE": {
             "value": "0"
           },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
           "C_SLOT_0_APC_EN": {
             "value": "0"
           },
@@ -1492,6 +1495,9 @@
           "pf0_msi_enabled": {
             "value": "false"
           },
+          "pf0_subsystem_id": {
+            "value": "0007"
+          },
           "pl_link_cap_max_link_speed": {
             "value": "8.0_GT/s"
           },
@@ -1503,6 +1509,9 @@
           },
           "xdma_axilite_slave": {
             "value": "true"
+          },
+          "xdma_sts_ports": {
+            "value": "false"
           },
           "xdma_wnum_rids": {
             "value": "32"
@@ -1948,15 +1957,11 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
+                "value": "250000000",
+                "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
-                "value": "design_1_util_ds_buf_0_0_IBUF_OUT",
+                "value": "design_1_xdma_0_0_axi_aclk",
                 "value_src": "default_prop"
               }
             }
@@ -2131,6 +2136,11 @@
           "led_alarm"
         ]
       },
+      "system_reset_100mhz_interconnect_aresetn": {
+        "ports": [
+          "system_reset_100mhz/interconnect_aresetn"
+        ]
+      },
       "system_reset_100mhz_peripheral_aresetn": {
         "ports": [
           "system_reset_100mhz/peripheral_aresetn",
@@ -2138,8 +2148,7 @@
           "system_ila_0/resetn",
           "xdma_bridge/sys_rst_n",
           "ddr4_axi_interconnect/S01_ARESETN",
-          "logic_controller/M_AXI_ARESETN",
-          "blinker/RESETN"
+          "logic_controller/M_AXI_ARESETN"
         ]
       },
       "system_reset_100mhz_peripheral_reset": {
@@ -2156,26 +2165,27 @@
           "system_ila_0/clk",
           "go_button/CLK",
           "ddr4_axi_interconnect/S01_ACLK",
-          "logic_controller/M_AXI_ACLK",
-          "blinker/CLK"
+          "logic_controller/M_AXI_ACLK"
         ]
       },
       "xdma_0_axi_aclk": {
         "ports": [
           "xdma_bridge/axi_aclk",
           "ddr4_axi_interconnect/S00_ACLK",
-          "ddr4_axi_interconnect/ACLK",
           "system_interconnect/M01_ACLK",
-          "system_interconnect/S00_ACLK"
+          "system_interconnect/S00_ACLK",
+          "ddr4_axi_interconnect/ACLK",
+          "blinker/CLK"
         ]
       },
       "xdma_0_axi_aresetn": {
         "ports": [
           "xdma_bridge/axi_aresetn",
-          "ddr4_axi_interconnect/ARESETN",
           "ddr4_axi_interconnect/S00_ARESETN",
           "system_interconnect/M01_ARESETN",
-          "system_interconnect/S00_ARESETN"
+          "system_interconnect/S00_ARESETN",
+          "ddr4_axi_interconnect/ARESETN",
+          "blinker/RESETN"
         ]
       },
       "xdma_bridge_user_lnk_up": {
