@@ -57,11 +57,11 @@
         "parameters": {
           "AXI_ARBITRATION_SCHEME": {
             "value": "RD_PRI_REG",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "BURST_LENGTH": {
             "value": "8",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "CAN_DEBUG": {
             "value": "false",
@@ -69,47 +69,47 @@
           },
           "CAS_LATENCY": {
             "value": "17",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "CAS_WRITE_LATENCY": {
             "value": "16",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "CS_ENABLED": {
             "value": "true",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "CUSTOM_PARTS": {
             "value": "../../../../../../ddr4/custom_parts_KSM24SED8.csv",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "DATA_MASK_ENABLED": {
             "value": "NO_DM_NO_DBI",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "DATA_WIDTH": {
             "value": "72",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "MEMORY_PART": {
             "value": "DDR4_CUSTOM",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "MEMORY_TYPE": {
             "value": "SODIMMs",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "MEM_ADDR_MAP": {
             "value": "ROW_COLUMN_BANK",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "SLOT": {
             "value": "Single",
-            "value_src": "user_prop"
+            "value_src": "default"
           },
           "TIMEPERIOD_PS": {
             "value": "938",
-            "value_src": "user_prop"
+            "value_src": "default"
           }
         }
       },
@@ -1694,11 +1694,26 @@
           "pciebar2axibar_axil_master": {
             "value": "0A0000000"
           },
+          "pf0_Use_Class_Code_Lookup_Assistant": {
+            "value": "false"
+          },
+          "pf0_base_class_menu": {
+            "value": "Processing_accelerators"
+          },
+          "pf0_class_code_base": {
+            "value": "12"
+          },
+          "pf0_class_code_interface": {
+            "value": "00"
+          },
           "pf0_device_id": {
             "value": "903F"
           },
           "pf0_msi_enabled": {
             "value": "false"
+          },
+          "pf0_sub_class_interface_menu": {
+            "value": "Unknown"
           },
           "pf0_subsystem_id": {
             "value": "0007"

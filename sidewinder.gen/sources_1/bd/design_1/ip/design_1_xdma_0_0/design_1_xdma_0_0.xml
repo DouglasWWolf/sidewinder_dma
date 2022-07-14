@@ -20192,7 +20192,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f0b259fd</spirit:value>
+            <spirit:value>9:1329bb84</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -20206,11 +20206,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 13 18:33:02 UTC 2022</spirit:value>
+            <spirit:value>Wed Jul 13 23:51:23 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:7ecda09a</spirit:value>
+            <spirit:value>9:852a322e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -50282,7 +50282,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF0_CLASS_CODE</spirit:name>
         <spirit:displayName>Pf0 Class Code</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_CLASS_CODE" spirit:bitStringLength="24">0x070001</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_CLASS_CODE" spirit:bitStringLength="24">0x120000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF1_VENDOR_ID</spirit:name>
@@ -51917,6 +51917,10 @@
       <spirit:enumeration>Custom</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_list_ad30f1a5</spirit:name>
+      <spirit:enumeration>Unknown</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_list_ae9f88f6</spirit:name>
       <spirit:enumeration>1</spirit:enumeration>
     </spirit:choice>
@@ -52517,7 +52521,7 @@
     <spirit:parameter>
       <spirit:name>pf0_base_class_menu</spirit:name>
       <spirit:displayName>Pf0 Base Class Menu</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_base_class_menu" spirit:choiceRef="choice_list_0d378f84" spirit:order="26">Simple_communication_controllers</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_base_class_menu" spirit:choiceRef="choice_list_0d378f84" spirit:order="26">Processing_accelerators</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -52529,7 +52533,7 @@
     <spirit:parameter>
       <spirit:name>pf0_class_code_base</spirit:name>
       <spirit:displayName>Pf0 Class Code Base</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_base" spirit:order="27">07</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_base" spirit:order="27">12</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -52541,7 +52545,7 @@
     <spirit:parameter>
       <spirit:name>pf0_sub_class_interface_menu</spirit:name>
       <spirit:displayName>Pf0 Sub Class Interface Menu</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_sub_class_interface_menu" spirit:choiceRef="choice_list_3cee6ea1" spirit:order="28">16450_compatible_serial_controller</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_sub_class_interface_menu" spirit:choiceRef="choice_list_ad30f1a5" spirit:order="28">Unknown</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -52565,7 +52569,7 @@
     <spirit:parameter>
       <spirit:name>pf0_class_code_interface</spirit:name>
       <spirit:displayName>pf0 Class Code Interface</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_interface" spirit:order="30">01</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_interface" spirit:order="30">00</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -52577,7 +52581,7 @@
     <spirit:parameter>
       <spirit:name>pf0_class_code</spirit:name>
       <spirit:displayName>pf0 Class Code</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code" spirit:order="31">070001</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code" spirit:order="31">120000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -60354,10 +60358,16 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pcie_blk_locn" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pcie_extended_tag" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pciebar2axibar_axil_master" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_Use_Class_Code_Lookup_Assistant" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_base_class_menu" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_class_code" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_class_code_base" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_class_code_interface" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_device_id" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_msi_enabled" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_msix_cap_pba_bir" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_msix_cap_table_bir" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_sub_class_interface_menu" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pf0_subsystem_id" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pl_link_cap_max_link_speed" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.pl_link_cap_max_link_width" xilinx:valueSource="user"/>

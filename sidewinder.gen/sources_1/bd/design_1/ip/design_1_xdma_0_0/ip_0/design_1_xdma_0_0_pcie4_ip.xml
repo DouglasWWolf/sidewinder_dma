@@ -7633,11 +7633,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jul 13 18:33:02 UTC 2022</spirit:value>
+            <spirit:value>Wed Jul 13 23:51:23 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:588bf9cd</spirit:value>
+            <spirit:value>9:63247a26</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -20151,7 +20151,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF0_CLASS_CODE</spirit:name>
         <spirit:displayName>Pf0 Class Code</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_CLASS_CODE" spirit:bitStringLength="24">0x070001</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_CLASS_CODE" spirit:bitStringLength="24">0x120000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF0_VENDOR_ID</spirit:name>
@@ -22571,6 +22571,10 @@
       <spirit:enumeration>Custom</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_list_ad30f1a5</spirit:name>
+      <spirit:enumeration>Unknown</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_list_bdd7203f</spirit:name>
       <spirit:enumeration>True</spirit:enumeration>
       <spirit:enumeration>False</spirit:enumeration>
@@ -22640,30 +22644,6 @@
     <spirit:choice>
       <spirit:name>choice_list_d8920bdd</spirit:name>
       <spirit:enumeration>8</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_list_d992adf6</spirit:name>
-      <spirit:enumeration>Generic_XT_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>16450_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>Parallel_port</spirit:enumeration>
-      <spirit:enumeration>IEEE_1284_controller</spirit:enumeration>
-      <spirit:enumeration>Multiport_serial_controller</spirit:enumeration>
-      <spirit:enumeration>16650_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>IEEE_1284_target_device</spirit:enumeration>
-      <spirit:enumeration>Hayes_compatible_modem_with_16550_compatible_interface</spirit:enumeration>
-      <spirit:enumeration>ECP_1.X_compliant_parallel_port</spirit:enumeration>
-      <spirit:enumeration>16850_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>Hayes_compatible_modem_with_16750_compatible_interface</spirit:enumeration>
-      <spirit:enumeration>Smart_Card</spirit:enumeration>
-      <spirit:enumeration>Bi_directional_parallel_port</spirit:enumeration>
-      <spirit:enumeration>Other_communications_device</spirit:enumeration>
-      <spirit:enumeration>GPIB(IEEE_488.1/2)_controller</spirit:enumeration>
-      <spirit:enumeration>16550_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>Hayes_compatible_modem_with_16450_compatible_interface</spirit:enumeration>
-      <spirit:enumeration>16750_compatible_serial_controller</spirit:enumeration>
-      <spirit:enumeration>Hayes_compatible_modem_with_16650_compatible_interface</spirit:enumeration>
-      <spirit:enumeration>Generic_modem</spirit:enumeration>
-      <spirit:enumeration>16950_compatible_serial_controller</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_dff1a45d</spirit:name>
@@ -22861,7 +22841,7 @@
     <spirit:parameter>
       <spirit:name>PF0_CLASS_CODE</spirit:name>
       <spirit:displayName>Pf0 Class Code</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PF0_CLASS_CODE" spirit:order="34.03">070001</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PF0_CLASS_CODE" spirit:order="34.03">120000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -23929,7 +23909,7 @@
     <spirit:parameter>
       <spirit:name>pf0_class_code_interface</spirit:name>
       <spirit:displayName>Pf0 Class Code Interface</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_interface" spirit:order="34.02">01</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_interface" spirit:order="34.02">00</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>pf0_sriov_bar1_scale</spirit:name>
@@ -24102,12 +24082,12 @@
     <spirit:parameter>
       <spirit:name>pf0_base_class_menu</spirit:name>
       <spirit:displayName>Pf0 Base Class Menu</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_base_class_menu" spirit:choiceRef="choice_list_dff1a45d" spirit:order="33">Simple_communication_controllers</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_base_class_menu" spirit:choiceRef="choice_list_dff1a45d" spirit:order="33">Processing_accelerators</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>pf0_sub_class_interface_menu</spirit:name>
       <spirit:displayName>Pf0 Sub Class Interface Menu</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_sub_class_interface_menu" spirit:choiceRef="choice_list_d992adf6" spirit:order="34">16450_compatible_serial_controller</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_sub_class_interface_menu" spirit:choiceRef="choice_list_ad30f1a5" spirit:order="34">Unknown</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>pf1_sriov_bar0_scale</spirit:name>
@@ -25588,7 +25568,7 @@
     <spirit:parameter>
       <spirit:name>pf0_class_code_base</spirit:name>
       <spirit:displayName>Pf0 Class Code Base</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_base" spirit:order="33.1">07</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_class_code_base" spirit:order="33.1">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>axisten_if_width</spirit:name>
