@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x16F0F49A0372E767",
+      "boundary_crc": "0xB06062EDDC575D2F",
       "design_src": "SBD",
       "device": "xczu19eg-ffvc1760-2-i",
       "name": "bd_36cd",
@@ -32,7 +32,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "34",
+            "value": "64",
             "value_src": "default"
           },
           "ARUSER_WIDTH": {
@@ -163,7 +163,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "34",
+            "value": "64",
             "value_src": "default"
           },
           "ARUSER_WIDTH": {
@@ -415,7 +415,7 @@
             "value": "0"
           },
           "C_PROBE13_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_PROBE14_TYPE": {
             "value": "0"
@@ -574,7 +574,7 @@
             "value": "0"
           },
           "C_PROBE37_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_PROBE38_TYPE": {
             "value": "0"
@@ -592,7 +592,7 @@
             "value": "0"
           },
           "C_PROBE3_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_PROBE40_TYPE": {
             "value": "0"
@@ -640,7 +640,7 @@
             "value": "0"
           },
           "C_PROBE47_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_PROBE48_TYPE": {
             "value": "0"
@@ -840,7 +840,7 @@
             "value": "0"
           },
           "C_SLOT_0_AXI_ADDR_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_SLOT_0_AXI_ARUSER_WIDTH": {
             "value": "0"
@@ -927,7 +927,7 @@
             "value": "1"
           },
           "C_SLOT_1_AXI_ADDR_WIDTH": {
-            "value": "34"
+            "value": "64"
           },
           "C_SLOT_1_AXI_ARUSER_WIDTH": {
             "value": "0"

@@ -14,7 +14,7 @@
 module ram_reader#
 (
     parameter integer AXI_DATA_WIDTH = 512,
-    parameter integer AXI_ADDR_WIDTH = 34,
+    parameter integer AXI_ADDR_WIDTH = 64,
     parameter integer AXI_ID_WIDTH   = 4
 )
 (
@@ -290,6 +290,7 @@ module ram_reader#
     //<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
     
     localparam BLOCK_SIZE = 256;
+    localparam RAM_BASE_ADDR = 64'h400000000;
 
     // Assign some convenient (and standard) names to the clock and reset lines
     wire clk    = M_AXI_ACLK;
@@ -306,7 +307,7 @@ module ram_reader#
         end else case(state)
 
         0:  if (BUTTON) begin
-                amci_raddr <= 0;
+                amci_raddr <= RAM_BASE_ADDR;
                 amci_read  <= 1;
                 index      <= 1;
                 state      <= 1;

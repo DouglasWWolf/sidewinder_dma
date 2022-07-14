@@ -20,7 +20,7 @@
 module controller#
 (
     parameter integer AXI_DATA_WIDTH = 512,
-    parameter integer AXI_ADDR_WIDTH = 34
+    parameter integer AXI_ADDR_WIDTH = 64
 )
 (
     input BUTTON,
@@ -302,7 +302,7 @@ module controller#
     wire resetn = M_AXI_ARESETN;
 
     // An AXI address that increments by 64 bytes (512 bits) on every clock cycle
-    reg[AXI_ADDR_WIDTH-1:0] random_addr = 0;
+    reg[34:0] random_addr = 34'h100000000;
     always @(posedge clk) random_addr <= random_addr + 64;
 
     reg[AXI_DATA_WIDTH-1:0] free_timer;

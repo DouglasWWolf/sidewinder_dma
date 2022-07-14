@@ -85,7 +85,7 @@ module bd_36cd_wrapper
     probe0,
     probe1,
     resetn);
-  input [33:0]SLOT_0_AXI_araddr;
+  input [63:0]SLOT_0_AXI_araddr;
   input [1:0]SLOT_0_AXI_arburst;
   input [3:0]SLOT_0_AXI_arcache;
   input [3:0]SLOT_0_AXI_arid;
@@ -96,7 +96,7 @@ module bd_36cd_wrapper
   input SLOT_0_AXI_arready;
   input [2:0]SLOT_0_AXI_arsize;
   input SLOT_0_AXI_arvalid;
-  input [33:0]SLOT_0_AXI_awaddr;
+  input [63:0]SLOT_0_AXI_awaddr;
   input [1:0]SLOT_0_AXI_awburst;
   input [3:0]SLOT_0_AXI_awcache;
   input [3:0]SLOT_0_AXI_awid;
@@ -122,7 +122,7 @@ module bd_36cd_wrapper
   input SLOT_0_AXI_wready;
   input [63:0]SLOT_0_AXI_wstrb;
   input SLOT_0_AXI_wvalid;
-  input [33:0]SLOT_1_AXI_araddr;
+  input [63:0]SLOT_1_AXI_araddr;
   input [1:0]SLOT_1_AXI_arburst;
   input [3:0]SLOT_1_AXI_arcache;
   input [3:0]SLOT_1_AXI_arid;
@@ -133,7 +133,7 @@ module bd_36cd_wrapper
   input SLOT_1_AXI_arready;
   input [2:0]SLOT_1_AXI_arsize;
   input SLOT_1_AXI_arvalid;
-  input [33:0]SLOT_1_AXI_awaddr;
+  input [63:0]SLOT_1_AXI_awaddr;
   input [1:0]SLOT_1_AXI_awburst;
   input [3:0]SLOT_1_AXI_awcache;
   input [3:0]SLOT_1_AXI_awid;
@@ -164,7 +164,7 @@ module bd_36cd_wrapper
   input [0:0]probe1;
   input resetn;
 
-  wire [33:0]SLOT_0_AXI_araddr;
+  wire [63:0]SLOT_0_AXI_araddr;
   wire [1:0]SLOT_0_AXI_arburst;
   wire [3:0]SLOT_0_AXI_arcache;
   wire [3:0]SLOT_0_AXI_arid;
@@ -175,7 +175,7 @@ module bd_36cd_wrapper
   wire SLOT_0_AXI_arready;
   wire [2:0]SLOT_0_AXI_arsize;
   wire SLOT_0_AXI_arvalid;
-  wire [33:0]SLOT_0_AXI_awaddr;
+  wire [63:0]SLOT_0_AXI_awaddr;
   wire [1:0]SLOT_0_AXI_awburst;
   wire [3:0]SLOT_0_AXI_awcache;
   wire [3:0]SLOT_0_AXI_awid;
@@ -201,7 +201,7 @@ module bd_36cd_wrapper
   wire SLOT_0_AXI_wready;
   wire [63:0]SLOT_0_AXI_wstrb;
   wire SLOT_0_AXI_wvalid;
-  wire [33:0]SLOT_1_AXI_araddr;
+  wire [63:0]SLOT_1_AXI_araddr;
   wire [1:0]SLOT_1_AXI_arburst;
   wire [3:0]SLOT_1_AXI_arcache;
   wire [3:0]SLOT_1_AXI_arid;
@@ -212,7 +212,7 @@ module bd_36cd_wrapper
   wire SLOT_1_AXI_arready;
   wire [2:0]SLOT_1_AXI_arsize;
   wire SLOT_1_AXI_arvalid;
-  wire [33:0]SLOT_1_AXI_awaddr;
+  wire [63:0]SLOT_1_AXI_awaddr;
   wire [1:0]SLOT_1_AXI_awburst;
   wire [3:0]SLOT_1_AXI_awcache;
   wire [3:0]SLOT_1_AXI_awid;

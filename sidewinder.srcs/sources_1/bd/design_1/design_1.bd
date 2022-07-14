@@ -44,9 +44,9 @@
       "go_button": "",
       "xdma_clock": "",
       "xdma_bridge": "",
-      "logic_controller": "",
       "blinker": "",
       "read_button": "",
+      "logic_controller": "",
       "ram_reader": ""
     },
     "interface_ports": {
@@ -1791,6 +1791,87 @@
           }
         }
       },
+      "blinker": {
+        "vlnv": "xilinx.com:module_ref:blinker:1.0",
+        "xci_name": "design_1_blinker_0_0",
+        "xci_path": "ip/design_1_blinker_0_0/design_1_blinker_0_0.xci",
+        "inst_hier_path": "blinker",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "blinker",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESETN",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "250000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_xdma_0_0_axi_aclk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "RESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "LED": {
+            "direction": "O"
+          }
+        }
+      },
+      "read_button": {
+        "vlnv": "xilinx.com:module_ref:button:1.0",
+        "xci_name": "design_1_button_0_1",
+        "xci_path": "ip/design_1_button_0_1/design_1_button_0_1.xci",
+        "inst_hier_path": "read_button",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "button",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_util_ds_buf_0_0_IBUF_OUT",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "PIN": {
+            "direction": "I"
+          },
+          "Q": {
+            "direction": "O"
+          }
+        }
+      },
       "logic_controller": {
         "vlnv": "xilinx.com:module_ref:controller:1.0",
         "xci_name": "design_1_controller_0_0",
@@ -1824,7 +1905,7 @@
                 "value_src": "constant"
               },
               "ADDR_WIDTH": {
-                "value": "34",
+                "value": "64",
                 "value_src": "auto"
               },
               "AWUSER_WIDTH": {
@@ -1915,8 +1996,8 @@
             "address_space_ref": "M_AXI",
             "base_address": {
               "minimum": "0x00000000",
-              "maximum": "0x0003FFFFFFFF",
-              "width": "34"
+              "maximum": "0xFFFFFFFFFFFFFFFF",
+              "width": "64"
             },
             "port_maps": {
               "AWID": {
@@ -1928,7 +2009,7 @@
               "AWADDR": {
                 "physical_name": "M_AXI_AWADDR",
                 "direction": "O",
-                "left": "33",
+                "left": "63",
                 "right": "0"
               },
               "AWLEN": {
@@ -2026,7 +2107,7 @@
               "ARADDR": {
                 "physical_name": "M_AXI_ARADDR",
                 "direction": "O",
-                "left": "33",
+                "left": "63",
                 "right": "0"
               },
               "ARLEN": {
@@ -2151,90 +2232,9 @@
         "addressing": {
           "address_spaces": {
             "M_AXI": {
-              "range": "16G",
-              "width": "34"
+              "range": "16E",
+              "width": "64"
             }
-          }
-        }
-      },
-      "blinker": {
-        "vlnv": "xilinx.com:module_ref:blinker:1.0",
-        "xci_name": "design_1_blinker_0_0",
-        "xci_path": "ip/design_1_blinker_0_0/design_1_blinker_0_0.xci",
-        "inst_hier_path": "blinker",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "blinker",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "RESETN",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "250000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_xdma_0_0_axi_aclk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "RESETN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "LED": {
-            "direction": "O"
-          }
-        }
-      },
-      "read_button": {
-        "vlnv": "xilinx.com:module_ref:button:1.0",
-        "xci_name": "design_1_button_0_1",
-        "xci_path": "ip/design_1_button_0_1/design_1_button_0_1.xci",
-        "inst_hier_path": "read_button",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "button",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "PIN": {
-            "direction": "I"
-          },
-          "Q": {
-            "direction": "O"
           }
         }
       },
@@ -2271,7 +2271,7 @@
                 "value_src": "auto"
               },
               "ADDR_WIDTH": {
-                "value": "34",
+                "value": "64",
                 "value_src": "auto"
               },
               "AWUSER_WIDTH": {
@@ -2362,8 +2362,8 @@
             "address_space_ref": "M_AXI",
             "base_address": {
               "minimum": "0x00000000",
-              "maximum": "0x0003FFFFFFFF",
-              "width": "34"
+              "maximum": "0xFFFFFFFFFFFFFFFF",
+              "width": "64"
             },
             "port_maps": {
               "AWID": {
@@ -2375,7 +2375,7 @@
               "AWADDR": {
                 "physical_name": "M_AXI_AWADDR",
                 "direction": "O",
-                "left": "33",
+                "left": "63",
                 "right": "0"
               },
               "AWLEN": {
@@ -2473,7 +2473,7 @@
               "ARADDR": {
                 "physical_name": "M_AXI_ARADDR",
                 "direction": "O",
-                "left": "33",
+                "left": "63",
                 "right": "0"
               },
               "ARLEN": {
@@ -2595,8 +2595,8 @@
         "addressing": {
           "address_spaces": {
             "M_AXI": {
-              "range": "16G",
-              "width": "34"
+              "range": "16E",
+              "width": "64"
             }
           }
         }
@@ -2795,8 +2795,8 @@
           "system_ila_0/resetn",
           "xdma_bridge/sys_rst_n",
           "ddr4_axi_interconnect/S01_ARESETN",
-          "logic_controller/M_AXI_ARESETN",
           "ddr4_axi_interconnect/S02_ARESETN",
+          "logic_controller/M_AXI_ARESETN",
           "ram_reader/M_AXI_ARESETN"
         ]
       },
@@ -2814,9 +2814,9 @@
           "system_ila_0/clk",
           "go_button/CLK",
           "ddr4_axi_interconnect/S01_ACLK",
-          "logic_controller/M_AXI_ACLK",
           "read_button/CLK",
           "ddr4_axi_interconnect/S02_ACLK",
+          "logic_controller/M_AXI_ACLK",
           "ram_reader/M_AXI_ACLK"
         ]
       },
@@ -2866,7 +2866,7 @@
             "segments": {
               "SEG_ddr4_ram_C0_DDR4_ADDRESS_BLOCK": {
                 "address_block": "/ddr4_ram/C0_DDR4_MEMORY_MAP/C0_DDR4_ADDRESS_BLOCK",
-                "offset": "0x0000000000000000",
+                "offset": "0x0000000400000000",
                 "range": "16G"
               }
             }
@@ -2893,7 +2893,7 @@
             "segments": {
               "SEG_ddr4_ram_C0_DDR4_ADDRESS_BLOCK": {
                 "address_block": "/ddr4_ram/C0_DDR4_MEMORY_MAP/C0_DDR4_ADDRESS_BLOCK",
-                "offset": "0x000000000",
+                "offset": "0x0000000400000000",
                 "range": "16G"
               }
             }
@@ -2906,7 +2906,7 @@
             "segments": {
               "SEG_ddr4_ram_C0_DDR4_ADDRESS_BLOCK": {
                 "address_block": "/ddr4_ram/C0_DDR4_MEMORY_MAP/C0_DDR4_ADDRESS_BLOCK",
-                "offset": "0x000000000",
+                "offset": "0x0000000400000000",
                 "range": "16G"
               }
             }
